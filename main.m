@@ -1,5 +1,8 @@
-clear all;
-close all;
-clc;
+clear all
+close all
+clc
 
-a=xlsread('Stimuli.xlsx');
+%Ætlumst til að gagnamappan sé inni í MATLAB möppunni
+
+mappa = pwd + "/Platform all subjects";
+stim = xlsread(mappa + "/Stimuli.xlsx");
