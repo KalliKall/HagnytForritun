@@ -2,22 +2,30 @@ clear all
 close all
 clc
 
-%Ætlumst til að gagnamappan sé inni í MATLAB möppunni
+% Ætlumst til að gagnamappan sé inni í sömu möppu og main.m
+mappa = pwd + "/Platform all subjects/";
+directory = dir(mappa);
 
-mappa = pwd + "/Platform all subjects";
-stim = xlsread(mappa + "/Stimuli.xlsx");
+data = cell(length(directory)-2, 0);
+
+% Lesum allar .xls skrár inn í cellu
+% Start at 3 because 1 and 2 are hidden pointers.
+for i=3:length(directory)
+	data{i-2} = xlsread(mappa + directory(i).name);
+end
 
 % Breytum 59 í 1 og 20 í 0.
-for i=1:length(stim)
-    
-    if  stim(i,2) == 59
-        
-        stim(i,2)=1;
+for i=1:length(data{end})
+    if data{end}(i,2) == 59
+        data{end}(i,2) = 1;
     end
-    if stim(i,2) == 20
-         stim(i,2)=0;
+    if data{end}(i,2) == 20
+        data{end}(i,2) = 0;
     end
 end
 
+% Finna fjölda stumula og meðaltíma þeirra.
+[stimuli, averageTime] = averageTime(data{end});
 
-[len, averageTime] = averageTime(stim)
+disp("Heildarfjöldi stimuli er " + stimuli + ".");
+disp("Meðaltími hvers stimulus er " + averageTime + " sekúndur.");
