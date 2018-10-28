@@ -6,3 +6,5 @@ clc
 
 mappa = pwd + "/Platform all subjects";
 stim = xlsread(mappa + "/Stimuli.xlsx");
+
+[len, averageTime] = averageTime(stim)
