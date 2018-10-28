@@ -1,4 +1,6 @@
 .DS_STORE
+'Platform all subjects'/
+*.xlsx
 
 # Windows default autosave extension
 *.asv
