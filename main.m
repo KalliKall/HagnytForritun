@@ -22,3 +22,5 @@ data{end} = updateStim(data{end});
 
 disp("Heildarfjöldi stimuli er " + stimuli + ".");
 disp("Meðaltími hvers stimulus er " + averageTime + " sekúndur.");
+
+drawGraphs(data);
