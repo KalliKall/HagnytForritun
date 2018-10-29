@@ -15,14 +15,7 @@ for i=3:length(directory)
 end
 
 % Breytum 59 í 1 og 20 í 0.
-for i=1:length(data{end})
-    if data{end}(i,2) == 59
-        data{end}(i,2) = 1;
-    end
-    if data{end}(i,2) == 20
-        data{end}(i,2) = 0;
-    end
-end
+data{end} = updateStim(data{end});
 
 % Finna fjölda stumula og meðaltíma þeirra.
 [stimuli, averageTime] = averageTime(data{end});
