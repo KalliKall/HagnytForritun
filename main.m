@@ -16,10 +16,10 @@ for i=3:length(directory)
 end
 
 % Breytum 59 í 1 og 20 í 0.
-data{end} = updateStim(data{end});
+data{end, 1} = updateStim(data{end, 1});
 
 % Finna fjölda stumula og meðaltíma þeirra.
-[stimuli, averageTime] = averageTime(data{end});
+[stimuli, averageTime] = averageTime(data{end, 1});
 
 disp("Heildarfjöldi stimuli er " + stimuli + ".");
 disp("Meðaltími hvers stimulus er " + averageTime + " sekúndur.");
