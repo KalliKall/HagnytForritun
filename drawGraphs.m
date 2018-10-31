@@ -12,7 +12,9 @@ q3End = 12750;
 q4Start = 12751;
 q4End = 16500;
 
-mkdir myndir;
+if ~exist('myndir', 'dir')
+    mkdir('myndir')
+end
 
 for i = 1:2:length(data)-1
 
