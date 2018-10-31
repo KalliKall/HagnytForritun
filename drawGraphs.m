@@ -12,8 +12,8 @@ q3End = 12750;
 q4Start = 12751;
 q4End = 16500;
 
-if ~exist('myndir', 'dir')
-    mkdir('myndir')
+if ~exist('myndir/results', 'dir')
+    mkdir('myndir/results')
 end
 
 for i = 1:2:length(data)-1
@@ -66,7 +66,7 @@ figure
     hold on
     plot(data{i+1, 1}(q4Start:q4End,1), data{i+1, 1}(q4Start:q4End, 2), 'k');
     hold on
-    title('Opin augu: Medial/Lateral vægi', 'FontSize',9);
+    title('Opin augu: Medial/Lateral vï¿½gi', 'FontSize',9);
     axis([0 330 -40 40]);
     xticks(0:50:330);
     ylabel('Torque [Nm]', 'FontSize',9)
@@ -82,10 +82,10 @@ figure
     hold on
     plot(data{i+1, 1}(q4Start:q4End,1), data{i+1, 1}(q4Start:q4End, 3), 'k');
     hold on
-    title('Opin augu: Medial/Lateral vægi', 'FontSize',9);
+    title('Opin augu: Medial/Lateral vï¿½gi', 'FontSize',9);
     axis([0 330 -40 40]);
     xticks(0:50:330);
-    xlabel('Tími[s]', 'FontSize',9)
+    xlabel('Tï¿½mi[s]', 'FontSize',9)
     ylabel('Torque[Nm]', 'FontSize',9)
 
     subplot(3,2,4);
@@ -99,7 +99,7 @@ figure
     hold on
     plot(data{i, 1}(q4Start:q4End,1), data{i, 1}(q4Start:q4End, 2), 'k');
     hold on
-    title('Lokuð augu: Medial/Lateral vægi', 'FontSize',7);
+    title('Lokuï¿½ augu: Medial/Lateral vï¿½gi', 'FontSize',7);
     axis([0 330 -40 40]);
     xticks(0:50:330);
     ylabel('Torque [Nm]', 'FontSize',9)
@@ -115,18 +115,15 @@ figure
     hold on
     plot(data{i, 1}(q4Start:q4End,1), data{i, 1}(q4Start:q4End, 3), 'k');
     hold on
-    title('Lokuð augu: Medial/Lateral vægi', 'FontSize',9);
+    title('Lokuï¿½ augu: Medial/Lateral vï¿½gi', 'FontSize',9);
     axis([0 330 -40 40]);
     xticks(0:50:330);
-    xlabel('Tími [s]', 'FontSize',9)
+    xlabel('Tï¿½mi [s]', 'FontSize',9)
     ylabel('Torque [Nm]', 'FontSize',9)
-    
-    n = strsplit(data{i, 2}, '_');
-    name = string(n(1));
 
-    path = '/myndir/'+name+'.png';
+    path = '/myndir/results/' + string(data{i,2}(1)) + '.png';
 
-    saveas(gcf, [pwd+path]);
+    saveas(gcf, [pwd + path]);
     
     close all
 end
