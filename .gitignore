@@ -2,6 +2,9 @@
 'Platform all subjects'/
 *.xlsx
 
+'myndir'/
+*.png
+
 # Windows default autosave extension
 *.asv
 
