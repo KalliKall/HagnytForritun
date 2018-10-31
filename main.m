@@ -11,7 +11,8 @@ data = cell(length(directory)-2, 0);
 % Lesum allar .xls skrár inn í cellu
 % Start at 3 because 1 and 2 are hidden pointers.
 for i=3:length(directory)
-	data{i-2} = xlsread(mappa + directory(i).name);
+	data{i-2,1} = xlsread(mappa + directory(i).name);
+    data{i-2,2} = directory(i).name;
 end
 
 % Breytum 59 í 1 og 20 í 0.
