@@ -66,7 +66,7 @@ figure
     hold on
     plot(data{i+1, 1}(q4Start:q4End,1), data{i+1, 1}(q4Start:q4End, 2), 'k');
     hold on
-    title('Opin augu: Medial/Lateral v�gi', 'FontSize',9);
+    title('Opin augu: Medial/Lateral vægi', 'FontSize',9);
     axis([0 330 -40 40]);
     xticks(0:50:330);
     ylabel('Torque [Nm]', 'FontSize',9)
@@ -82,10 +82,10 @@ figure
     hold on
     plot(data{i+1, 1}(q4Start:q4End,1), data{i+1, 1}(q4Start:q4End, 3), 'k');
     hold on
-    title('Opin augu: Medial/Lateral v�gi', 'FontSize',9);
+    title('Opin augu: Medial/Lateral vægi', 'FontSize',9);
     axis([0 330 -40 40]);
     xticks(0:50:330);
-    xlabel('T�mi[s]', 'FontSize',9)
+    xlabel('Tími[s]', 'FontSize',9)
     ylabel('Torque[Nm]', 'FontSize',9)
 
     subplot(3,2,4);
@@ -99,7 +99,7 @@ figure
     hold on
     plot(data{i, 1}(q4Start:q4End,1), data{i, 1}(q4Start:q4End, 2), 'k');
     hold on
-    title('Loku� augu: Medial/Lateral v�gi', 'FontSize',7);
+    title('Lokuð augu: Medial/Lateral vægi', 'FontSize',7);
     axis([0 330 -40 40]);
     xticks(0:50:330);
     ylabel('Torque [Nm]', 'FontSize',9)
@@ -115,10 +115,10 @@ figure
     hold on
     plot(data{i, 1}(q4Start:q4End,1), data{i, 1}(q4Start:q4End, 3), 'k');
     hold on
-    title('Loku� augu: Medial/Lateral v�gi', 'FontSize',9);
+    title('Lokuð augu: Medial/Lateral vægi', 'FontSize',9);
     axis([0 330 -40 40]);
     xticks(0:50:330);
-    xlabel('T�mi [s]', 'FontSize',9)
+    xlabel('Tími [s]', 'FontSize',9)
     ylabel('Torque [Nm]', 'FontSize',9)
 
     path = '/myndir/results/' + string(data{i,2}(1)) + '.png';
