@@ -11,7 +11,9 @@ data = cell(length(directory)-2, 0);
 % Lesum allar .xls skrár inn í cellu
 % Start at 3 because 1 and 2 are hidden pointers.
 for i=3:length(directory)
-	data{i-2,1} = xlsread(mappa + directory(i).name);
+    filename = directory(i).name;
+    
+    data{i-2,1} = xlsread(mappa + directory(i).name);
     data{i-2,2} = strsplit(directory(i).name, '_');
 end
 

@@ -1,6 +1,6 @@
 function stimuliData(data)
 
-%Búa til breytur út frá lýsingunni
+%BÃºa til breytur Ãºt frÃ¡ lÃ½singunni
 qsStart = 1;
 qsEnd = 1500;
 q1Start = 1501;
@@ -12,19 +12,19 @@ q3End = 12750;
 q4Start = 12751;
 q4End = 16500;
 
-%Tékkum hvort möppur sem við ætlum að save-a myndirnar í eru til annars
-%búum við þær til
+%Athugum hvort mappan sem myndinar eiga aÃ° fara Ã­ eru til
 if ~exist('myndir/stimuliData', 'dir')
+    %BÃºum til mÃ¶ppuna sem myndinar fara Ã­ 
     mkdir('myndir/stimuliData')
 end
 
-%For loopa fyrir hvert data set hoppað yfir 2 í einu vegna þess að oddatala
-%er með opin augu og sléttar tölur fyrir lokuð augu
+%For loopa fyrir hvert data set, getum hoppaÃ° yfir 2 Ã­ einu
+    %vegna Ã¾ess aÃ° oddatala er meÃ° open og jafntÃ¶lur eru meÃ° closed
 for i = 1:2:length(data)-1
 
     figure
     
-    %Teiknað upp stimuli graph
+    %TeiknaÃ° upp stimuli graph
     subplot(3,2,1);
     plot(data{end, 1}(qsStart:qsEnd,1), data{end, 1}(qsStart:qsEnd,2), 'm');
     hold on
@@ -42,7 +42,7 @@ for i = 1:2:length(data)-1
     yticks([]);
     daspect([1 0.03 1]);
 
-    %Teiknað upp stimuli graph 2
+    %TeiknaÃ° upp stimuli graph 2
     subplot(3,2,2);
     plot(data{end, 1}(qsStart:qsEnd,1), data{end, 1}(qsStart:qsEnd,2), 'm');
     hold on
@@ -60,7 +60,7 @@ for i = 1:2:length(data)-1
     yticks([]);
     daspect([1 0.03 1]);
     
-    %Teiknað upp graph fyrir opin augu Medial/Lateral vægi
+    %TeiknaÃ° upp graph fyrir opin augu Medial/Lateral vÃ¦gi
     subplot(3,2,3);
     plot(data{i+1, 1}(qsStart:qsEnd,1), data{i+1, 1}(qsStart:qsEnd,2), 'm');
     hold on
@@ -72,12 +72,12 @@ for i = 1:2:length(data)-1
     hold on
     plot(data{i+1, 1}(q4Start:q4End,1), data{i+1, 1}(q4Start:q4End, 2), 'k');
     hold on
-    title('Opin augu: Medial/Lateral vï¿½gi', 'FontSize',9);
+    title('Opin augu: Medial/Lateral vÃ¦gi', 'FontSize',9);
     axis([0 330 -40 40]);
     xticks(0:50:330);
     ylabel('Torque [Nm]', 'FontSize',9)
     
-    %Teiknað upp graph fyrir opin augu Aterior/Posterior vægi
+    %TeiknaÃ° upp graph fyrir opin augu Aterior/Posterior vÃ¦gi
     subplot(3,2,5);
     plot(data{i+1, 1}(qsStart:qsEnd,1), data{i+1, 1}(qsStart:qsEnd,3), 'm');
     hold on
@@ -89,13 +89,13 @@ for i = 1:2:length(data)-1
     hold on
     plot(data{i+1, 1}(q4Start:q4End,1), data{i+1, 1}(q4Start:q4End, 3), 'k');
     hold on
-    title('Opin augu: Aterior/Posterior vægi', 'FontSize',9);
+    title('Opin augu: Aterior/Posterior vÃ¦gi', 'FontSize',9);
     axis([0 330 -40 40]);
     xticks(0:50:330);
-    xlabel('Tï¿½mi[s]', 'FontSize',9)
+    xlabel('TÃ­mi[s]', 'FontSize',9)
     ylabel('Torque[Nm]', 'FontSize',9)
 
-    %Teiknað upp graph fyrir lokuð augu Medial/Lateral vægi
+    %TeiknaÃ° upp graph fyrir lokuÃ° augu Medial/Lateral vÃ¦gi
     subplot(3,2,4);
     plot(data{i, 1}(qsStart:qsEnd,1), data{i, 1}(qsStart:qsEnd,2), 'm');
     hold on
@@ -107,12 +107,12 @@ for i = 1:2:length(data)-1
     hold on
     plot(data{i, 1}(q4Start:q4End,1), data{i, 1}(q4Start:q4End, 2), 'k');
     hold on
-    title('Lokuï¿½ augu: Medial/Lateral vï¿½gi', 'FontSize',7);
+    title('LokuÃ° augu: Medial/Lateral vÃ¦gi', 'FontSize',7);
     axis([0 330 -40 40]);
     xticks(0:50:330);
     ylabel('Torque [Nm]', 'FontSize',9)
     
-    %Teiknað upp graph fyrir lokuð augu Aterior/Posterior vægi
+    %TeiknaÃ° upp graph fyrir lokuÃ° augu Aterior/Posterior vÃ¦gi
     subplot(3,2,6);
     plot(data{i, 1}(qsStart:qsEnd,1), data{i, 1}(qsStart:qsEnd,3), 'm');
     hold on
@@ -124,13 +124,13 @@ for i = 1:2:length(data)-1
     hold on
     plot(data{i, 1}(q4Start:q4End,1), data{i, 1}(q4Start:q4End, 3), 'k');
     hold on
-    title('Lokuï¿½ augu: Aterior/Posterior', 'FontSize',9);
+    title('LokuÃ° augu: Aterior/Posterior', 'FontSize',9);
     axis([0 330 -40 40]);
     xticks(0:50:330);
-    xlabel('Tï¿½mi [s]', 'FontSize',9)
+    xlabel('TÃ­mi [s]', 'FontSize',9)
     ylabel('Torque [Nm]', 'FontSize',9)
     
-    %búum til breytu sem heldur utan um slóðina þar sem við ætlum að save-a
+    %bÃºum til breytu sem heldur utan um slÃ³Ã°ina Ã¾ar sem viÃ° Ã¦tlum aÃ° save-a
     %myndirnar
     path = '/myndir/stimuliData/' + string(data{i,2}(1)) + '.png';
     

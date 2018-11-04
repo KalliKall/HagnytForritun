@@ -19,6 +19,7 @@ function swingDifference(data)
         title("Opin augu");     
         xlabel('Medial/lateral [Nm]'); 
         ylabel('Anterior/posterior [Nm]');
+        axis([-40 40 -80 80]);
 
         subplot(1,2,2);
         plot(data{i+1,1}(:,2),data{i+1,1}(:,3), ".");
@@ -26,6 +27,7 @@ function swingDifference(data)
         title("Lokuð augu");
         xlabel('Medial/lateral [Nm]');
         ylabel('Anterior/posterior [Nm]');
+        axis([-40 40 -80 80]);
 
         %Búum til staðsetningu fyrir myndina og vistum þar
         path = '/myndir/swingDifference/' + string(data{i,2}(1)) + '.png';
@@ -36,3 +38,4 @@ function swingDifference(data)
     end
 end
 
+%y -70 80 x -40 30
