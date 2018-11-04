@@ -24,5 +24,5 @@ data{end, 1} = updateStim(data{end, 1});
 disp("Heildarfjöldi stimuli er " + stimuli + ".");
 disp("Meðaltími hvers stimulus er " + averageTime + " sekúndur.");
 
-drawGraphs(data);
+stimuliData(data);
 swingDifference(data);
