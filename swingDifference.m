@@ -37,5 +37,3 @@ function swingDifference(data)
         close all;
     end
 end
-
-%y -70 80 x -40 30
