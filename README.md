@@ -4,8 +4,8 @@
 
 ## Copyright ©
 
-Andri Freyr Jónasson
-Ólafur Unnar Torfason
-Sara Jankovic
-Stefán Jóhannsson
-Unnar Karl Jónsson
+Andri Freyr Jónasson  
+Ólafur Unnar Torfason  
+Sara Jankovic  
+Stefán Jóhannsson  
+Unnar Karl Jónsson  
